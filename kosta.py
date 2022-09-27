@@ -13,22 +13,25 @@ while game:
         key == ""
         print ("у камня ")
         if way_1:
-            print ("первая вариант ")
+            print ("первый вариант ")
         if way_2:
-            print ("вторая вариант ")
+            print ("второй вариант ")
         if way_3:
-            print ("третья вариант ")
+            print ("третий вариант ")
         user_choise = input("введите номер решения")
-        os.system("cls")
         key += user_choise
+        os.system("cls")
         print("1 дорога ")
         print("2 дорога ")
+
     if key == "1":
         print("дорога 1 - хорошо ")
+        input("нажмите энтер для продолжения")
         game = False
     if key =="2":
-        print("2 дорога  плохо :(")
-        game = False
+        print("плохая концовка :(")
+        input("нажмите энтер для продолжения")
+        os.system("cls")
     if key =="3":
         print("1 дорога :)")
         game = False
