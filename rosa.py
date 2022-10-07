@@ -63,26 +63,42 @@ while game:
     if way_2 and key == "2":
         os.system("cls")
         print("дорга 2 ты встретил ведьму")
-        print("1 - отрубить голову")
-        print("2 - отрубить голову и уйти")
+        print("1 - короче суда или")
+        print("2 - суда")
+
 
         user_choice = input("введите номер ответа и нажмите ENTER ")
         if user_choice == 1 or user_choice == 2:
             key += user_choice
-        if user_choice == "1" and way_1:
-            key += user_choice
-        if user_choice == "2" and way_2:
-            key += user_choice
+
+    # key == "22"
 
     if way_2 and key == "21":
         os.system("cls")
-        print("1 - ты отрубил голову, но она успела кинуть в тебя зелье и тыстал лягушкой тут прибежала царевна которая прислуживала ей испасла тебя ")
-        way_2 = False
-        key = ""
+        secret = random.randint(1, 100)
+        print("ведьма загадала число от 1 до 100. отгадай его.")
+        attempts = 7
+        while attempts:
+            print(f"у вас {attempts} попыток")
+            user_choice = int(input("введите число"))
+            if user_choice == secret:
+                print("угадал")
+                key = ""
+                way_2 = False
+                break
+            elif user_choice > secret:
+                print("многовато")
+                attempts -= 1
+            else:
+                print("маловато")
+                attempts -= 1
+        else:
+            print("проиграл")
+            game = False
 
     if way_2 and key == "22":
         os.system("cls")
-        print("2 - ты отрубил голову, но она успела кинуть в тебя зелье и тыстал лягушкой")
+        print("2 - ")
         game = False
         key = ""
 
@@ -116,4 +132,4 @@ while game:
         print("все дроги проехал молодец")
         game = False
 
-print("конец")2
+print("конец")
